@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Rss App</title>
+<link rel="stylesheet" type="text/css" media="all" href="/css/style.css" />
+</head>
+<body>	
+
+	<div id="container">
+	<header>
+	<h2 align="center">Rss - APP</h2>
+	</header>
+	<div th:if="${message != null}" id="message">
+		<div th:if="${message == 'success'}" id="messageok">
+			<p align="center" th:text="${message}"></p>
+		</div>
+		<div th:unless="${message == 'success'}" id="messageerr">
+			<p align="center" th:text="${message}"></p>
+		</div>
+	</div>
+	<div th:unless="${message != null}">
+		<br>
+		<br>
+		<br>
+	</div>
+	
+	<form th:action="@{/}" method="post">
+		
+		<div>
+			<div id="rssinput">
+				<label for="rsslink">rss</label>
+				<input type="url" id="rsslink" name="rsslink"><br>
+			</div>
+			<div id="rssinput">
+				<label for="email">email</label>
+				<input th:if="${email == null}" type="email" id="email" name="email" ><br>
+				<input th:unless="${email == null}" type="email" id="email" name="email" th:value="${email}" disabled="disabled"><br>
+			</div>
+		</div>
+		<div id="save_block">
+			<button id="save" type="submit">Save</button>
+		</div>
+		
+	</form>
+	<!-- ******************************************************************************  -->
+	<div id="list">
+		<form th:action="@{/delete}" method="post">
+			
+			<table>
+				<tr>
+					<th id="lp">Lp.</th>
+					<th id="check"><button type="submit">remove selected</button></th>
+					<th>rss link</th>
+					<th></th>
+				</tr>
+				
+				<tr th:if="${!rss_list.isEmpty()}" th:each="r, it : ${rss_list}">
+					<td th:text="${it.count}"></td>
+					<td>
+						<input type="checkbox" name="deleteid" th:value="${r.id}"> 
+					</td>
+					<td th:text="${r.rsslink}"></td>
+					<td>
+						<a th:href="@{'/delete/' + ${r.id}}">Delete</a>
+					</td>
+				</tr>
+				
+			
+			</table>
+		</form>
+	</div>
+	<div id="save_block">
+		<form th:action="@{/send}" method="get">
+			<button type="submit" id="save">Send</button>
+		</form>
+	</div>
+	
+	<div id="email_content">
+		<label for="emailView">Email view</label><br>
+		<textarea id="emailView" name="emailView" rows="10" cols="10" th:text="${textarea_content}">
+		</textarea><br>
+	</div>
+	<div id="save_block">
+		<form th:action="@{/clear}" method="get">
+			<button type="submit" id="save">Clear</button>
+		</form>
+	</div>
+	<footer>
+		<p>Autor: Piotr Konicki</p>
+	</footer>
+	</div>
+</body>
+</html>

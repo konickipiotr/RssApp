@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+body{
+	background-color:#80d4ff;
+}
+
+header{
+	background-color: #0099ff;
+}
+
+footer{
+	background-color: black;
+	color: white;
+}
+#list{
+	width: 98%;
+	padding: 1%;
+}
+
+table{
+	width: 100%;
+	border: 2px solid black;
+	border-collapse: collapse;
+}
+
+th{
+	background-color: grey;
+	border: 1px solid black;
+}
+td{
+	background-color: white;
+	border: 1px solid black;
+}
+#lp{
+	width: 30px;	
+}
+
+#check{
+	width: 130px;
+}
+
+#container{
+	background-color: #ffffe6;
+	width: 70%;
+	margin: auto;
+}
+
+#message{
+	width: 70%;
+	padding: 3px;
+	margin: auto;
+	border-radius: 5px;
+	
+}
+
+#messageok{
+	width: 100%;
+	height: 100%;
+	background-color: #66ff66;
+}
+#messageerr{
+	width: 100%;
+	height: 100%;
+	background-color: #ff8080;
+}
+
+
+#rssinput{
+	padding: 1%;
+	width: 48%;
+	float: left;
+}
+
+#rssinput{
+	padding: 1%;
+	width: 48%;
+	float: left;
+}
+
+#save_block{
+	clear: both;
+	width: 30%;
+	margin: auto;
+}
+
+#save{
+	
+	background-color: #66ff66;
+	border-radius: 8px;
+	height: 30px;
+	width: 100px;
+	font-size: 14px;
+}
+
+#email_content{
+	width: 96%;
+	padding: 2%;
+	margin: auto;
+}
+
+#emailView{
+	width: 95%;
+	min-height: 100px;
+	resize: none;
+}
