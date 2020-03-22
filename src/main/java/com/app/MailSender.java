@@ -22,7 +22,7 @@ public class MailSender {
 	    Mail mail = new Mail(from, subject, to, content);
 
 	    //SendGrid sg = new SendGrid(System.getenv("SENDGRID_API_KEY"));
-	    SendGrid sg = new SendGrid("API-KEY");
+	    SendGrid sg = new SendGrid("Api-key");
 	    Request request = new Request();
 	    try {
 	      request.setMethod(Method.POST);
